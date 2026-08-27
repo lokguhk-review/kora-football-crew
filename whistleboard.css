@@ -1,0 +1,96 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#ffffff; --ink:#0f1020; --body:#474a63; --faint:#565a75;
+  --line:#e6e6ef; --indigo:#4338ca; --indigo-d:#312a94; --pink:#db2777; --wash:#f5f5fb;
+}
+body{background:var(--paper);color:var(--body);
+  font-family:"Familjen Grotesk","Noto Sans TC",system-ui,sans-serif;
+  font-size:16px;line-height:1.85;-webkit-text-size-adjust:100%}
+svg{display:block} a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+
+.top{padding:20px 0}
+.top .row{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.mk{font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-.02em}
+.mk s{text-decoration:none;color:var(--pink)}
+.nav{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:var(--faint)}
+.nav a:hover{color:var(--ink)}
+.top .go{margin-left:auto}
+.btn{display:inline-block;border-radius:8px;padding:11px 20px;font-size:14px;font-weight:700}
+.btn.solid{background:var(--indigo);color:#fff}
+.btn.line{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn.pink{background:var(--pink);color:#fff}
+
+/* ---- 置中巨標 ＋ 四周手繪塗鴉（Tally 骨架核心） ---- */
+.stage{position:relative;padding:44px 0 26px;text-align:center;overflow:hidden}
+.doodle{position:absolute;pointer-events:none;opacity:.85}
+.d1{left:-6px;top:196px} .d2{right:-8px;top:178px}
+.d3{left:30px;bottom:-4px} .d4{right:40px;bottom:8px}
+h1{font-size:clamp(30px,5.2vw,58px);line-height:1.06;font-weight:800;color:var(--ink);
+  letter-spacing:-.035em;text-wrap:balance;position:relative;z-index:2;
+  max-width:15.5em;margin:0 auto}
+.uline{display:block;margin:6px auto 0;width:min(320px,62%)}
+.stage p{margin:18px auto 0;max-width:34em;font-size:17px;position:relative;z-index:2;text-wrap:pretty}
+.acts{margin-top:24px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2}
+.hint{margin-top:11px;font-size:13px;color:var(--faint);position:relative;z-index:2}
+
+/* ---- 中央窗框（參考站嘅瀏覽器框，改成執法面板） ---- */
+.frame{margin:34px auto 0;max-width:960px;border:1px solid var(--line);border-radius:13px;
+  overflow:hidden;background:#fff;box-shadow:0 12px 34px rgba(15,16,32,.07)}
+.frame .bar{display:flex;align-items:center;gap:7px;padding:11px 15px;border-bottom:1px solid var(--line);background:#fbfbfe}
+.frame .bar i{width:10px;height:10px;border-radius:50%;background:#dcdce9;display:block}
+.frame .bar b{margin-left:9px;font-size:12.5px;color:var(--faint);font-weight:600}
+.frame .in{padding:24px 26px}
+.crew{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.crew div{border:1px solid var(--line);border-radius:10px;padding:14px 12px;text-align:left}
+.crew b{display:block;font-size:15px;color:var(--ink);font-weight:800}
+.crew span{font-size:12.5px;color:var(--faint);line-height:1.5;display:block;margin-top:3px}
+.crew em{font-style:normal;display:inline-block;margin-top:8px;font-size:11px;font-weight:800;
+  letter-spacing:.07em;color:var(--indigo);background:var(--wash);border-radius:5px;padding:3px 7px}
+
+section{padding:44px 0 0}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);font-weight:800}
+h2{font-size:clamp(21px,2.9vw,32px);line-height:1.18;font-weight:800;color:var(--ink);
+  margin-top:8px;letter-spacing:-.024em;text-wrap:balance}
+h3{font-size:17px;color:var(--ink);font-weight:800;text-wrap:balance}
+section>p{margin-top:14px;max-width:44em} p+p{margin-top:13px}
+.hr{height:1px;background:var(--line);margin-top:38px}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:24px}
+.cards.two{grid-template-columns:repeat(2,1fr)}
+.cd{border:1px solid var(--line);border-radius:12px;padding:20px 18px;background:#fff}
+.cd .n{font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--indigo)}
+.cd p{margin-top:7px;font-size:14.5px;line-height:1.72}
+
+.steps{margin-top:22px;counter-reset:s}
+.steps li{list-style:none;display:grid;grid-template-columns:30px 1fr;gap:13px;
+  padding:14px 0;border-top:1px solid var(--line);align-items:start}
+.steps li::before{counter-increment:s;content:counter(s);width:24px;height:24px;border-radius:7px;
+  background:var(--ink);color:#fff;font-size:12px;font-weight:800;display:grid;place-items:center;margin-top:3px}
+.steps li>b,.steps li>span{grid-column:2}
+.steps li>b{color:var(--ink);font-size:15.5px}
+.steps li>span{display:block;margin-top:4px;font-size:14.5px;line-height:1.7}
+
+table{width:100%;border-collapse:collapse;margin-top:22px;font-size:14.5px;
+  border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:var(--wash);color:var(--ink);font-weight:800;font-size:13.5px}
+tr:last-child td{border-bottom:none} td b{color:var(--ink)}
+
+/* 深色收尾帶：逐個元件補反色 */
+.band{background:var(--indigo-d);border-radius:16px;padding:32px 30px;margin-top:38px;color:#d5d3f2}
+.band h2{color:#fff} .band p{color:#d5d3f2} .band .eyebrow{color:#f5a8cf}
+.band .btn.line{background:transparent;color:#fff;border-color:#6f68c9}
+
+.foot{margin-top:48px;padding:28px 0 44px;border-top:1px solid var(--line);font-size:13.5px;color:var(--faint)}
+.foot .fl{display:flex;gap:15px;flex-wrap:wrap;margin-bottom:11px}
+.foot .fl a:hover{color:var(--ink)}
+.age{margin-top:10px;font-size:12.5px}
+
+@media(max-width:900px){
+  .crew{grid-template-columns:repeat(2,1fr)}
+  .cards,.cards.two{grid-template-columns:1fr}
+  .top .go{margin-left:0;flex:0 0 100%}
+  .doodle{display:none}
+  .frame .in{padding:18px 16px}
+}
